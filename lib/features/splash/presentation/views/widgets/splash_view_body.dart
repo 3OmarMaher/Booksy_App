@@ -1,4 +1,4 @@
-import 'package:booksy/constant/constant.dart';
+import 'package:booksy/core/constant/constant.dart';
 import 'package:booksy/features/home/presentation/views/home.dart';
 import 'package:booksy/features/splash/presentation/views/widgets/custom_slide_text.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:booksy/constant/constant.dart';
+import 'package:booksy/core/constant/constant.dart';
 import 'package:booksy/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
