@@ -15,7 +15,7 @@ class Booksy extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme:
-          ThemeData.dark().copyWith(scaffoldBackgroundColor: kBacegroundColor),
+          ThemeData.dark().copyWith(scaffoldBackgroundColor: kBackgroundColor),
       home: const SplashView(),
     );
   }

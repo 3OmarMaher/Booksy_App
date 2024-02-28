@@ -1,4 +1,8 @@
+import 'package:booksy/constant/constant.dart';
+import 'package:booksy/features/home/presentation/views/home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 
 import 'widgets/custom_slide_text.dart';
 
@@ -19,16 +23,15 @@ class _SplashViewState extends State<SplashView>
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    slidingText = Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
-        .animate(animationController);
-    slidingImage = Tween<Offset>(begin: const Offset(2, 0), end: Offset.zero)
-        .animate(animationController);
-    animationController.forward(); //shape of text animate 
-    slidingText.addListener(() {
-      setState(() {});
-    });
+    slidingAnimation();
+
+    navigateToHome();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
   }
 
   @override
@@ -46,5 +49,30 @@ class _SplashViewState extends State<SplashView>
         ),
       ),
     );
+  }
+
+  void slidingAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    slidingText = Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
+        .animate(animationController);
+    slidingImage = Tween<Offset>(begin: const Offset(2, 0), end: Offset.zero)
+        .animate(animationController);
+    animationController.forward(); //shape of text animate
+    slidingText.addListener(() {
+      setState(() {});
+    });
+  }
+
+  void navigateToHome() {
+    //مده ظهور ال سبلاش اسكرين
+    Future.delayed(const Duration(seconds: 2), () {
+      //navigator to home page
+      Get.to(() => const HomePage(),
+          //transition effect
+          transition: Transition.fade,
+          //duration of transition effect
+          duration: kTransitionDuration);
+    });
   }
 }
