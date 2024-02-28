@@ -1,7 +1,7 @@
+import 'package:booksy/constant/constant.dart';
 import 'package:flutter/material.dart';
-
-import 'widgets/csutom_item.dart';
 import 'widgets/custom_app_bar.dart';
+import 'widgets/list_view_items.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,22 +9,23 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(children: [CustomAppBar(), ListViewItems()]),
-    );
-  }
-}
-
-class ListViewItems extends StatelessWidget {
-  const ListViewItems({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      //size of  one item in list view
-      height: MediaQuery.of(context).size.height * 0.25,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: ((context, index) => const CustomItem())),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomAppBar(),
+            ListViewItems(),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              'Best Seller',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
