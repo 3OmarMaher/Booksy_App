@@ -1,6 +1,7 @@
 import 'package:booksy/core/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'widgets/custom_app_bar.dart';
+import 'widgets/custom_best_seller.dart';
 import 'widgets/list_view_items.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,8 +22,9 @@ class HomePage extends StatelessWidget {
             ),
             Text(
               'Best Seller',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-            )
+              style: Styles.textStyle18,
+            ),
+            BestSellerItem(),
           ],
         ),
       ),

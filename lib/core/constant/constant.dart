@@ -4,10 +4,8 @@ const Color kBackgroundColor = Color(0xff100B20);
 const Duration kTransitionDuration = Duration(milliseconds: 200);
 const kfontFamily = "Poppins";
 
-
 abstract class Styles {
-  
-   static const textStyle18 = TextStyle(
+  static const textStyle18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
   );
@@ -31,4 +29,3 @@ abstract class Styles {
     fontWeight: FontWeight.w500,
   );
 }
-
