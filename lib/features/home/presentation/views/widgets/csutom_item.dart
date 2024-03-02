@@ -6,7 +6,7 @@ class CustomItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.7 / 4,
+      aspectRatio: 2.9 / 4,
       child: Container(
           margin: const EdgeInsets.only(right: 16),
           decoration: BoxDecoration(

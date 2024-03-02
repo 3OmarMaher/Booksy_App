@@ -1,8 +1,9 @@
 import 'package:booksy/core/constant/constant.dart';
 import 'package:flutter/material.dart';
+import 'custom_rate.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+class BestSelleritem extends StatelessWidget {
+  const BestSelleritem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,30 +54,7 @@ class BestSellerItem extends StatelessWidget {
                 const SizedBox(
                   height: 3,
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      "19.99\$",
-                      style: Styles.textStyle18,
-                    ),
-                    SizedBox(
-                      width: 65,
-                    ),
-                    Icon(Icons.star, color: Colors.yellow),
-                    Text(
-                      "4.7",
-                      style: Styles.textStyle18,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      "(2569)",
-                      style: Styles.textStyle14,
-                    ),
-                  ],
-                )
+                const RatingWidgets()
               ],
             )
           ],

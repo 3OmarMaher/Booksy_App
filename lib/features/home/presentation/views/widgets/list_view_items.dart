@@ -9,7 +9,7 @@ class ListViewItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       //size of  one item in list view
-      height: MediaQuery.of(context).size.height * 0.25,
+      height: MediaQuery.of(context).size.height * 0.30,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: ((context, index) => const CustomItem())),
