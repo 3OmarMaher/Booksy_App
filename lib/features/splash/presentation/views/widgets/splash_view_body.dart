@@ -1,9 +1,7 @@
-import 'package:booksy/core/constant/constant.dart';
-import 'package:booksy/features/home/presentation/views/home.dart';
 import 'package:booksy/features/splash/presentation/views/widgets/custom_slide_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -65,13 +63,19 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     //مده ظهور ال سبلاش اسكرين
-    Future.delayed(const Duration(seconds: 2), () {
-      //navigator to home page
-      Get.to(() => const HomePage(),
-          //transition effect
-          transition: Transition.fade,
-          //duration of transition effect
-          duration: kTransitionDuration);
-    });
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        //navigator to home page
+        // Get.to(() => const HomePage(),
+        //     //transition effect
+        //     transition: Transition.fade,
+        //     //duration of transition effect
+        //     duration: kTransitionDuration);
+
+        //navigator to home page using GoRouter
+        GoRouter.of(context).pushReplacement('/home');
+      },
+    );
   }
 }

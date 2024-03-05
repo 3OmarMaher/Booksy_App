@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'csutom_item.dart';
+import 'custom_book_item.dart';
 
 class ListViewItems extends StatelessWidget {
   const ListViewItems({super.key});
@@ -9,10 +9,10 @@ class ListViewItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       //size of  one item in list view
-      height: MediaQuery.of(context).size.height * 0.30,
+      height: MediaQuery.of(context).size.height * 0.32,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemBuilder: ((context, index) => const CustomItem())),
+          itemBuilder: ((context, index) => const CustomBookItem())),
     );
   }
 }

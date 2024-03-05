@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const Color kBackgroundColor = Color(0xff100B20);
 const Duration kTransitionDuration = Duration(milliseconds: 200);
 const kfontFamily = "Poppins";
+const kfontFamily2 = "KaushanScript";
 
 abstract class Styles {
   static const textStyle18 = TextStyle(
@@ -15,9 +16,9 @@ abstract class Styles {
   );
   static const textStyle30 = TextStyle(
     fontSize: 30,
-    fontWeight: FontWeight.w900,
-    fontFamily: kfontFamily,
-    letterSpacing: 1.2,
+    fontWeight: FontWeight.w400,
+    fontFamily: kfontFamily2,
+    letterSpacing: 1.5,
   );
   static const textStyle14 = TextStyle(
     fontSize: 14,

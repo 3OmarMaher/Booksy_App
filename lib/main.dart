@@ -1,7 +1,8 @@
 import 'package:booksy/core/constant/constant.dart';
-import 'package:booksy/features/splash/presentation/views/splash_view.dart';
+import 'package:booksy/core/router.dart';
+
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -13,15 +14,16 @@ class Booksy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
+        
         scaffoldBackgroundColor: kBackgroundColor,
         //ثيم التطبيق كامل خيبقي الشكل ده من جوجل فونتس
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark()
             .textTheme /* تغير لون الخط عشان يبقي دارك زي الثيم */),
       ),
-      home: const SplashView(),
+      routerConfig: AppRouter.router,
     );
   }
 }
