@@ -1,5 +1,5 @@
 import 'package:booksy/core/constant/constant.dart';
-import 'package:booksy/core/router.dart';
+import 'package:booksy/core/app_router.dart';
 
 import 'package:flutter/material.dart';
 
