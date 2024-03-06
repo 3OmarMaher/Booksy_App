@@ -11,15 +11,15 @@ class BestSelleritem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        log("message");
-        GoRouter.of(context).push('/bookViewDetails');
-      },
-      child: SizedBox(
-        height: 150,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 12),
+    return SizedBox(
+      height: 150,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 12),
+        child: GestureDetector(
+          onTap: () {
+            log("message");
+            GoRouter.of(context).push('/bookViewDetails');
+          },
           child: Row(
             children: [
               const CustomBookItem(),
@@ -38,9 +38,7 @@ class BestSelleritem extends StatelessWidget {
               //     ),
               //   ),
               // ),
-              const SizedBox(
-                width: 20,
-              ),
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

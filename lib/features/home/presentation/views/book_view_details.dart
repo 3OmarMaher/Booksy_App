@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'widgets/book_details_app_bar.dart';
@@ -32,4 +31,3 @@ class BookViewDetails extends StatelessWidget {
     ));
   }
 }
-
