@@ -9,7 +9,7 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: '/',
+        path: '/1e',
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
@@ -25,9 +25,10 @@ abstract class AppRouter {
         builder: (context, state) => const BookViewDetails(),
       ),
       GoRoute(
-        path: '/chat',
-        builder: (context, state) => const MyWidget(),
+        path: '/widgets',
+        builder: (context, state) =>  MyWidgets(),
       ),
+     
     ],
   );
 }

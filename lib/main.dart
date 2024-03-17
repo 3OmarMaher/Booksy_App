@@ -16,7 +16,9 @@ class Booksy extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.dark(
+        useMaterial3: false,
+      ).copyWith(
         scaffoldBackgroundColor: kBackgroundColor,
         //ثيم التطبيق كامل خيبقي الشكل ده من جوجل فونتس
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark()

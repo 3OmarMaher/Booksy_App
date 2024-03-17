@@ -1,91 +1,89 @@
-import 'package:booksy/core/constant/constant.dart';
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class MyWidgets extends StatefulWidget {
+  const MyWidgets({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF075E54),
-          title: Text(
-            'WhatsApp',
-            style: Styles.textStyle20.copyWith(color: Colors.white),
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.more_vert,
-                color: Colors.white,
-              ),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        body: const ChatList(),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: const Color(0xFF25D366),
-          child: const Icon(Icons.message),
-          onPressed: () {},
-        ),
-      ),
-    );
-  }
+  _MyWidgetsState createState() => _MyWidgetsState();
 }
 
-class ChatList extends StatelessWidget {
-  const ChatList({super.key});
+class _MyWidgetsState extends State<MyWidgets> {
+  final PageController _pageController = PageController();
+  int _currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 20,
-      itemBuilder: (context, index) {
-        return const ChatItem();
-      },
-    );
-  }
-}
-
-class ChatItem extends StatelessWidget {
-  const ChatItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: const CircleAvatar(
-        backgroundImage: AssetImage('assets/images/appBarLogo.png'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Page View Example'),
       ),
-      title: const Text('Contact Name'),
-      subtitle: const Text('How are you doing?'),
-      trailing: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text('11:30 AM'),
-          Container(
-            width: 25,
-            height: 25,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(50),
+          Align(
+            alignment: Alignment.centerRight,
+            child: ElevatedButton(
+              onPressed: skip,
+              child: const Text('Skip'),
             ),
-            child: const Text(
-              '2',
-              style: TextStyle(color: Colors.white),
+          ),
+          Expanded(
+            child: PageView(
+              controller: _pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  _currentPageIndex = index;
+                });
+              },
+              children: const [
+                PageContent(pageNumber: 1),
+                PageContent(pageNumber: 2),
+                PageContent(pageNumber: 3),
+              ],
             ),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: nextPage,
+                child: const Text('Next'),
+              ),
+            ],
           ),
         ],
+      ),
+    );
+  }
+
+  void nextPage() {
+    setState(() {
+      _currentPageIndex = (_currentPageIndex + 1) % 3;
+      _pageController.animateToPage(
+        _currentPageIndex,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    });
+  }
+  void skip() {
+    // Navigate away or perform skip action
+    Navigator.pop(context);
+  }
+}
+
+class PageContent extends StatelessWidget {
+  final int pageNumber;
+
+  const PageContent({super.key, required this.pageNumber});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        'Page $pageNumber Content',
+        style: const TextStyle(fontSize: 24),
       ),
     );
   }
