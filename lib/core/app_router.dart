@@ -1,4 +1,4 @@
-import 'package:booksy/chats.dart';
+
 import 'package:booksy/features/home/presentation/views/book_view_details.dart';
 import 'package:booksy/features/home/presentation/views/home.dart';
 import 'package:booksy/features/search/search_view.dart';
@@ -9,7 +9,7 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: '/1e',
+        path: '/',
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
@@ -24,10 +24,7 @@ abstract class AppRouter {
         path: '/bookViewDetails',
         builder: (context, state) => const BookViewDetails(),
       ),
-      GoRoute(
-        path: '/widgets',
-        builder: (context, state) =>  MyWidgets(),
-      ),
+     
      
     ],
   );

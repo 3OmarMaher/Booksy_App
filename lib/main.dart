@@ -15,6 +15,7 @@ class Booksy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(
         useMaterial3: false,
@@ -24,6 +25,7 @@ class Booksy extends StatelessWidget {
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark()
             .textTheme /* تغير لون الخط عشان يبقي دارك زي الثيم */),
       ),
+      
       routerConfig: AppRouter.router,
     );
   }
